@@ -1,0 +1,19 @@
+package a2;
+import java.util.Scanner;
+
+public class main {
+
+	public static void main(String[] args) {
+		
+		mainMenu menu = new mainMenu();
+		int selection = 0;
+		
+		while(selection == 0 ) {
+			selection = menu.getUserSelection();
+			System.out.println("Sel : " + selection);
+
+		}	
+		
+
+	}
+}
