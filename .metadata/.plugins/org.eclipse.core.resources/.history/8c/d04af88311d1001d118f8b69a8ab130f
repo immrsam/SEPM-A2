@@ -1,0 +1,22 @@
+package a2;
+
+import java.util.Scanner;
+
+public class mainMenu {
+	
+	private Scanner input;
+	
+	public mainMenu(Scanner input) {
+		this.input = input;
+	}
+	
+	public void displayMenu() {
+		System.out.println("--CINCO Ticketing System--");
+		System.out.println("");
+        System.out.println("1. User Login");
+        System.out.println("2. Create Account");
+        System.out.println("3. Forgot Password");
+        System.out.println("4. Exit");
+	}
+
+}

@@ -4,11 +4,34 @@ import java.util.Scanner;
 public class main {
 
 	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
-		System.out.println("Assignment 2");
-		System.out.print("Input: ");
-		String value = input.nextLine();
-		System.out.println("-- " + value + " --");
-		input.close();
+		
+		Scanner scanner = new Scanner(System.in);
+        String input;
+        int num;
+        
+        mainMenu menu = new mainMenu();
+
+        while (true) {
+        	menu.displayMenu();
+            
+        	System.out.print("Enter a selection or type 'exit' to quit: ");
+            input = scanner.nextLine();
+
+            if (input.equalsIgnoreCase("exit")) {
+                break;
+            }
+
+            try {
+                num = Integer.parseInt(input);
+                System.out.println("You entered: " + num);
+            } catch (NumberFormatException e) {
+                System.out.println("Error: Incorrect input. Please enter an integer.");
+            }
+        }
+
+        System.out.println("Program has ended.");
+        
+        scanner.close();		
+
 	}
 }
