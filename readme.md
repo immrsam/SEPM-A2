@@ -12,11 +12,11 @@ This application aims to have the following features:
 5. Technicians can change the severity of the issue once they have reviewed it. Once they have completed the job they can also close the job/mark it as unresolved, etc. 
 6. Closed tickets are archived for upto 24hrs during which time the technician can view the ticket but cannot change the status of the ticket (i.e., from closed to open)
 
-### Progress
-    - Login feature implemented
-    - Technician data loaded to .csv file and the program uses ImportData class to import the hardcoded technician information during login attempts
-    - Forgot password feature added
-    - Classes created - ImportData, Menu, StaffMember, Technician, Ticket, TicketSeverity, TicketStatus, User and MyApp
+## Progress
+1. Login feature implemented
+2. Technician data loaded to .csv file and the program uses ImportData class to import the hardcoded technician information during login attempts
+3. Forgot password feature added
+4. Classes created - ImportData, Menu, StaffMember, Technician, Ticket, TicketSeverity, TicketStatus, User and MyApp
 
 ## Installation/Usage
 
