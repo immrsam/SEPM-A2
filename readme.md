@@ -78,3 +78,15 @@ Download the Eclipse 2022-09 (version 4.25) from the following link: https://www
     Enter new password: qwerty1234
     --Password Updated--
     ```
+
+## Contributors
+1. Samuel Bradbury 
+    - Scrum leader initial stand up meeting/Created java project/Designed UML diagram for program planning/Contributed to the product backlog
+2. Mohamed Ali
+    - Contributed to the product backlog/Reviewed java program 
+3. Vignesh Menon
+    - Contributed to the ReadMe.txt/Reviewed java program 
+4. Idris Anwar
+    - Reviewed Java program
+
+
