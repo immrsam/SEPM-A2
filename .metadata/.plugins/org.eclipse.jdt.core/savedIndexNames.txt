@@ -1,4 +1,0 @@
-INDEX VERSION 1.131+F:\_RMIT\SEPM\A2\java\.metadata\.plugins\org.eclipse.jdt.core
-1994815164.index
-785778080.index
-1865797976.index

@@ -1,8 +1,0 @@
-package a2;
-
-public class mainMenu {
-	public mainMenu(Scanner scanner) {
-		// TODO Auto-generated constructor stub
-	}
-
-}
