@@ -16,8 +16,13 @@ This application aims to have the following features:
 1. Login feature implemented - Staff login and Technician Login
 2. Data loaded directly from 2-D arrays rather than csv files
 3. Staff menu options allows users to submit IT issue tickets and View existing tickets
-3. Forgot password feature completed
-4. Classes created - LoadData, Menu, StaffMember, Technician, Ticket, TicketSeverity, TicketStatus, User and CincoApp, StaffMenu, TechMenu
+4. Technician menu allows technician to view open ticket (if they exist) and closed ticket ONLY after a open ticket has been closed (exception handling on this is will be completed on next iteration)
+5. Technicians can escalate tasks from LOW or MEDIUM to HIGH (i.e., level 1 technicians can moved the task to level 2)
+6. Tehcnicians can close the task and mark then as resolved or unresolved
+7. Technicians can view closed tasks (re-opening tasks and storing tasks for only 24 hrs will be implemented in next iteration)
+8. Forgot password feature completed
+9. Classes created - LoadData, Menu, StaffMember, Technician, Ticket, TicketSeverity, TicketStatus, User and CincoApp, StaffMenu, TechMenu
+10. Creating user login will be implemented in next iteration along with exception handling for all possible error cases.
 
 ## Installation/Usage
 
@@ -125,22 +130,24 @@ Download the Eclipse 2022-09 (version 4.25) from the following link: https://www
     Enter your choice: 
     ```
 5. When the Technician login is selected - The client can use the following credentials for testing purposes only:
-    - email: zayn.malik@cinco.com
-    - password: zaynmalik2
+    - email: harry.styles@cinco.com (level 1)
+    - password: harrystyles1
+    - email: louis.tomlinson@cinco.com (level 2)
+    - password: louistomlinson2
     
     ```
     -----------------
     Technician Login 
     -----------------
 
-    Enter email: zayn.malik@cinco.com
-    Enter password: zaynmalik2
-    Found user: 1004
-    Name: Zayn Malik
+    Enter email: louis.tomlinson@cinco.com
+    Enter password: louistomlinson2
+    Found user: 1003
+    Name: Louis Tomlinson
     Phone: 61412345678
-    Email: zayn.malik@cinco.com
+    Email: louis.tomlinson@cinco.com
     Level: 2
-    Tasks: 0
+    Tasks: 1
     ----------
     MAIN MENU
     ----------
