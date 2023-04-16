@@ -1,0 +1,39 @@
+package a2;
+
+public class LoadData extends CincoApp{
+	//Pre-loaded Technician Data
+	public static void LoadStaff() {
+		String[][] sData = {{"2001", "Sam", "Bradbury", "sam.bradbury@cinco.com", "61412345678", "sambradbury1"},
+				{"2002", "Idris", "Anwar", "idris.anward@cinco.com", "61412345678", "idrisanwar1"}, 
+				{"2003", "Mohamed", "Ali", "mohammed.ali@cinco.com", "61412345678", "mohamedali1"}, 
+				{"2004", "Vignesh", "Menon", "vignesh.menon@cinco.com", "61412345678", "vigneshmenon1"}, 
+				{"2005", "Bill", "Smith", "bill.smith@cinco.com", "61412345678", "qwerty123"}};
+		
+		for(int i = 0; i <= 4; i++) {
+			int staffID = Integer.parseInt(sData[i][0]);
+			StaffMember staffMember = new StaffMember(staffID, sData[i][1], sData[i][2], sData[i][3], sData[i][4], sData[i][5]);
+			
+			// put the technician data into HashMap
+			staff.put(sData[i][3], staffMember);
+		}
+	}
+	
+	//Pre-loaded Technician Data
+	public static void LoadTechnicians() {
+		String[][] tData = {{"1000", "Harry", "Styles", "harry.styles@cinco.com", "61412345678", "harrystyles1", "1", "0"},
+				{"1001", "Naill", "Horan", "naill.horan@cinco.com", "61412345678", "naillhoran1", "1", "0"}, 
+				{"1002", "Liam", "Payne", "liam.payne@cinco.com", "61412345678", "liampayne1", "1", "0"}, 
+				{"1003", "Louis", "Tomlinson", "louis.tomlinson@cinco.com", "61412345678", "louistomlinson2", "2", "0"}, 
+				{"1004", "Zayn", "Malik", "zayn.malik@cinco.com", "61412345678", "zaynmalik2", "2", "0"}};
+		
+		for(int i = 0; i <= 4; i++) {
+			int techID = Integer.parseInt(tData[i][0]);
+			int level = Integer.parseInt(tData[i][6]);
+			int numTasks = Integer.parseInt(tData[i][7]);
+			Technician technician = new Technician(techID, tData[i][1], tData[i][2], tData[i][3], tData[i][4], tData[i][5], level, numTasks);
+			
+			// put the technician data into HashMap
+			tech.put(tData[i][3], technician);
+		}
+	}	
+}
