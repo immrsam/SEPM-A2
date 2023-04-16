@@ -13,10 +13,11 @@ This application aims to have the following features:
 6. Closed tickets are archived for upto 24hrs during which time the technician can view the ticket but cannot change the status of the ticket (i.e., from closed to open)
 
 ## Progress
-1. Login feature implemented
-2. Technician data loaded to .csv file and the program uses ImportData class to import the hardcoded technician information during login attempts
-3. Forgot password feature added
-4. Classes created - ImportData, Menu, StaffMember, Technician, Ticket, TicketSeverity, TicketStatus, User and MyApp
+1. Login feature implemented - Staff login and Technician Login
+2. Data loaded directly from 2-D arrays rather than csv files
+3. Staff menu options allows users to submit IT issue tickets and View existing tickets
+3. Forgot password feature completed
+4. Classes created - LoadData, Menu, StaffMember, Technician, Ticket, TicketSeverity, TicketStatus, User and CincoApp, StaffMenu, TechMenu
 
 ## Installation/Usage
 
@@ -44,19 +45,20 @@ Download the Eclipse 2022-09 (version 4.25) from the following link: https://www
     ----------------------
     CINCO TICKETING SYSTEM
     ----------------------
-    1. Login
-    2. Forgot Password
-    3. Quit
-    Enter your choice:
+    1. Staff Login
+    2. Technician Login
+    3. Forgot Password
+    4. Quit
+    Enter your choice: 
     ```
 
-2.  Once the user selects `Login` [1] - The Client can use the following user credentials for testing purposes only: 
+2.  Once the user selects `Staff Login` [1] - The Client can use the following user credentials for testing purposes only: 
     - email: b.smith@cinco.com
     - password: qwerty123
     
     ```
     -----------
-    User Login 
+    Staff Login 
     -----------
 
     Enter email: b.smith@cinco.com
@@ -78,15 +80,58 @@ Download the Eclipse 2022-09 (version 4.25) from the following link: https://www
     Enter new password: qwerty1234
     --Password Updated--
     ```
+4. Once the staff has logged in - They are presented with the following options:
+    
+    ```
+    ----------
+    MAIN MENU
+    ----------
+    1. Submit new IT issue
+    2. View existing IT issue(s)
+    3. Return to Main Menu
+    Enter your choice: 1
+    --------------------
+    Submit new IT issue 
+    --------------------
 
+    Enter IT issue description: ForDemo
+    Select Severity:
+    1. Low
+    2. Medium
+    3. High
+    Enter your choice: 2
+    ----------
+    MAIN MENU
+    ----------
+    1. Submit new IT issue
+    2. View existing IT issue(s)
+    3. Return to Main Menu
+    Enter your choice: 2
+
+    --------------------------
+    View existing IT issue(s) 
+    --------------------------
+
+    ----------------------------------------
+    TicketID: 1
+    Ticket Description: ForDemo
+    Ticket Severity: MEDIUM
+    ----------
+    MAIN MENU
+    ----------
+    1. Submit new IT issue
+    2. View existing IT issue(s)
+    3. Return to Main Menu
+    Enter your choice: 
+    ```
 ## Contributors
 1. Samuel Bradbury 
-    - Scrum leader initial stand up meeting/Created java project/Designed UML diagram for program planning/Contributed to the product backlog
+    - Assigment 2 Sprint 1 Scrum leader initial stand up meeting/Created java project/Designed UML diagram for program planning/Contributed to the product backlog
 2. Mohamed Ali
     - Contributed to the product backlog/Reviewed java program 
 3. Vignesh Menon
-    - Contributed to the ReadMe.txt/Reviewed java program 
+    - Assignmen 2 Sprint 2 Scrum leader/Contributed to the java project/Contributed to product backlog
 4. Idris Anwar
-    - Reviewed Java program
+    - Contributed to the product backlog/Reviewed Java program
 
 
