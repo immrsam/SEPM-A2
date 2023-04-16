@@ -124,6 +124,57 @@ Download the Eclipse 2022-09 (version 4.25) from the following link: https://www
     3. Return to Main Menu
     Enter your choice: 
     ```
+5. When the Technician login is selected - The client can use the following credentials for testing purposes only:
+    - email: zayn.malik@cinco.com
+    - password: zaynmalik2
+    
+    ```
+    -----------------
+    Technician Login 
+    -----------------
+
+    Enter email: zayn.malik@cinco.com
+    Enter password: zaynmalik2
+    Found user: 1004
+    Name: Zayn Malik
+    Phone: 61412345678
+    Email: zayn.malik@cinco.com
+    Level: 2
+    Tasks: 0
+    ----------
+    MAIN MENU
+    ----------
+    1. View OPEN Tickets
+    2. View CLOSED Tickets
+    3. Return to Main Menu
+    Enter your choice: 1
+    NO TICKETS CURRENTLY
+    ----------
+    MAIN MENU
+    ----------
+    1. View OPEN Tickets
+    2. View CLOSED Tickets
+    3. Return to Main Menu
+    Enter your choice: 2
+    NO TICKETS CURRENTLY
+    ----------
+    MAIN MENU
+    ----------
+    1. View OPEN Tickets
+    2. View CLOSED Tickets
+    3. Return to Main Menu
+    Enter your choice: 3
+    ----------------------
+    CINCO TICKETING SYSTEM
+    ----------------------
+    1. Staff Login
+    2. Technician Login
+    3. Forgot Password
+    4. Quit
+    Enter your choice: 4
+    Quitting...
+    ```
+    
 ## Contributors
 1. Samuel Bradbury 
     - Assigment 2 Sprint 1 Scrum leader initial stand up meeting/Created java project/Designed UML diagram for program planning/Contributed to the product backlog
