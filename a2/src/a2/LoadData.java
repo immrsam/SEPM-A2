@@ -39,7 +39,7 @@ public class LoadData extends CincoApp{
 	
 	// Pre-load system owner
 	public static void LoadSystemOwners() {
-		String[][] soData = {{"0001", "System", "Owner", "system@cinco.com", "61440000000", "admin1", "3", "0"}};
+		String[][] soData = {{"9001", "System", "Owner", "system@cinco.com", "61440000000", "admin1", "3", "0"}};
 		for (int i = 0; i < soData.length; i++) {
 			int techID = Integer.parseInt(soData[i][0]);
 			int level = Integer.parseInt(soData[i][6]);

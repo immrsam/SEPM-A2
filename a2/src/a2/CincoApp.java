@@ -24,10 +24,15 @@ public class CincoApp {
 		// Load data
 		LoadData.LoadStaff();
 		LoadData.LoadTechnicians();
+		LoadData.LoadSystemOwners();
 		
 		do {
 			userID = LoginMenu.Processor(input);
-			if (Integer.toString(userID).charAt(0) == '1') {
+			if(Integer.toString(userID).charAt(0) == '9') {
+				
+				SystemOwnerMenu.Processor(input, userID);
+			}
+			else if (Integer.toString(userID).charAt(0) == '1') {
 				// userID is for technician
 				TechMenu.Processor(input, userID);				
 			} else if (Integer.toString(userID).charAt(0) == '2') {
