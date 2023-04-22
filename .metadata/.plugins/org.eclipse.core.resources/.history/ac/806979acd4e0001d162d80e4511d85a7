@@ -18,12 +18,6 @@ public class SystemOwnerMenu{
             }
 			
             switch (choice) {
-            	case 1:
-            		System.out.println("	<-- Create reports entry point");
-            		continue;
-            	case 2:
-            		System.out.println("	<-- System admin entry point");
-            		continue;
 	            case 3:
 	            	break;
 	            default:
