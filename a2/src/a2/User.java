@@ -1,16 +1,16 @@
 package a2;
 
 public abstract class User {
-	private int userId;
+	private int userID;
 	private String fName;
 	private String lName;
 	private String email;
 	private String password;
 	private String phoneNumber;
 
-	public User(int userId, String fName, String lName, String email,String phoneNumber, String password) {
+	public User(int userID, String fName, String lName, String email,String phoneNumber, String password) {
 		super();
-		this.userId = userId;
+		this.userID = userID;
 		this.fName = fName;
 		this.lName = lName;
 		this.email = email;
@@ -19,8 +19,8 @@ public abstract class User {
 	}
 	
 
-	public int getUserId() {
-		return userId;
+	public int getUserID() {
+		return userID;
 	}
 
 	public String getfName() {
@@ -62,6 +62,5 @@ public abstract class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
 	
 }

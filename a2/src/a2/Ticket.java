@@ -1,17 +1,23 @@
 package a2;
 
 public class Ticket {
-	private String ticketId;
+	private int userID;
+	private int ticketId;
 	private String description;
 	private TicketStatus status;
 	private TicketSeverity severity;
 	
-	public Ticket(String ticketId, String description, TicketStatus status, TicketSeverity severity) {
+	public Ticket(int userID, int ticketId, String description, TicketStatus status, TicketSeverity severity) {
 		super();
+		this.userID = userID;
 		this.ticketId = ticketId;
 		this.description = description;
 		this.status = status;
 		this.severity = severity;
+	}
+	
+	public int getUserID() {
+		return userID;
 	}
 
 	public String getDescription() {
@@ -38,7 +44,7 @@ public class Ticket {
 		this.severity = severity;
 	}
 
-	public String getTicketId() {
+	public int getTicketId() {
 		return ticketId;
 	}
 
@@ -47,7 +53,4 @@ public class Ticket {
 		return "Ticket [ticketId=" + ticketId + ", description=" + description + ", status=" + status + ", severity="
 				+ severity + "]";
 	}
-	
-	
-	
 }

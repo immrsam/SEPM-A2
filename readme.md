@@ -13,10 +13,16 @@ This application aims to have the following features:
 6. Closed tickets are archived for upto 24hrs during which time the technician can view the ticket but cannot change the status of the ticket (i.e., from closed to open)
 
 ## Progress
-1. Login feature implemented
-2. Technician data loaded to .csv file and the program uses ImportData class to import the hardcoded technician information during login attempts
-3. Forgot password feature added
-4. Classes created - ImportData, Menu, StaffMember, Technician, Ticket, TicketSeverity, TicketStatus, User and MyApp
+1. Login feature implemented - Staff login and Technician Login
+2. Data loaded directly from 2-D arrays rather than csv files
+3. Staff menu options allows users to submit IT issue tickets and View existing tickets
+4. Technician menu allows technician to view open ticket (if they exist) and closed ticket ONLY after a open ticket has been closed (exception handling on this is will be completed on next iteration)
+5. Technicians can escalate tasks from LOW or MEDIUM to HIGH (i.e., level 1 technicians can moved the task to level 2)
+6. Tehcnicians can close the task and mark then as resolved or unresolved
+7. Technicians can view closed tasks (re-opening tasks and storing tasks for only 24 hrs will be implemented in next iteration)
+8. Forgot password feature completed
+9. Classes created - LoadData, Menu, StaffMember, Technician, Ticket, TicketSeverity, TicketStatus, User and CincoApp, StaffMenu, TechMenu
+10. Creating user login will be implemented in next iteration along with exception handling for all possible error cases.
 
 ## Installation/Usage
 
@@ -44,19 +50,20 @@ Download the Eclipse 2022-09 (version 4.25) from the following link: https://www
     ----------------------
     CINCO TICKETING SYSTEM
     ----------------------
-    1. Login
-    2. Forgot Password
-    3. Quit
-    Enter your choice:
+    1. Staff Login
+    2. Technician Login
+    3. Forgot Password
+    4. Quit
+    Enter your choice: 
     ```
 
-2.  Once the user selects `Login` [1] - The Client can use the following user credentials for testing purposes only: 
+2.  Once the user selects `Staff Login` [1] - The Client can use the following user credentials for testing purposes only: 
     - email: b.smith@cinco.com
     - password: qwerty123
     
     ```
     -----------
-    User Login 
+    Staff Login 
     -----------
 
     Enter email: b.smith@cinco.com
@@ -78,15 +85,218 @@ Download the Eclipse 2022-09 (version 4.25) from the following link: https://www
     Enter new password: qwerty1234
     --Password Updated--
     ```
+4. Once the staff has logged in - They are presented with the following options:
+    
+    ```
+    ----------
+    MAIN MENU
+    ----------
+    1. Submit new IT issue
+    2. View existing IT issue(s)
+    3. Return to Main Menu
+    Enter your choice: 1
+    --------------------
+    Submit new IT issue 
+    --------------------
 
+    Enter IT issue description: ForDemo
+    Select Severity:
+    1. Low
+    2. Medium
+    3. High
+    Enter your choice: 2
+    ----------
+    MAIN MENU
+    ----------
+    1. Submit new IT issue
+    2. View existing IT issue(s)
+    3. Return to Main Menu
+    Enter your choice: 2
+
+    --------------------------
+    View existing IT issue(s) 
+    --------------------------
+
+    ----------------------------------------
+    TicketID: 1
+    Ticket Description: ForDemo
+    Ticket Severity: MEDIUM
+    ----------
+    MAIN MENU
+    ----------
+    1. Submit new IT issue
+    2. View existing IT issue(s)
+    3. Return to Main Menu
+    Enter your choice: 
+    ```
+5. When the Technician login is selected - The client can use the following credentials for testing purposes only:
+    - email: harry.styles@cinco.com (level 1)
+    - password: harrystyles1
+    - email: louis.tomlinson@cinco.com (level 2)
+    - password: louistomlinson2
+    
+    ```
+    -----------------
+    Technician Login 
+    -----------------
+
+    Enter email: louis.tomlinson@cinco.com
+    Enter password: louistomlinson2
+    Found user: 1003
+    Name: Louis Tomlinson
+    Phone: 61412345678
+    Email: louis.tomlinson@cinco.com
+    Level: 2
+    Tasks: 1
+    ----------
+    MAIN MENU
+    ----------
+    1. View OPEN Tickets
+    2. View CLOSED Tickets
+    3. Return to Main Menu
+    Enter your choice: 1
+    NO TICKETS CURRENTLY
+    ----------
+    MAIN MENU
+    ----------
+    1. View OPEN Tickets
+    2. View CLOSED Tickets
+    3. Return to Main Menu
+    Enter your choice: 2
+    NO TICKETS CURRENTLY
+    ----------
+    MAIN MENU
+    ----------
+    1. View OPEN Tickets
+    2. View CLOSED Tickets
+    3. Return to Main Menu
+    Enter your choice: 3
+    ----------------------
+    CINCO TICKETING SYSTEM
+    ----------------------
+    1. Staff Login
+    2. Technician Login
+    3. Forgot Password
+    4. Quit
+    Enter your choice: 4
+    Quitting...
+    ```
+5. If technician has been assigned tickets and they are OPEN, then they can close tickets and escalate them to level 2:
+    ```
+    ----------
+    MAIN MENU
+    ----------
+    1. View OPEN Tickets
+    2. View CLOSED Tickets
+    3. Return to Main Menu
+    Enter your choice: 1
+
+    -------------
+    OPEN Tickets 
+    -------------
+
+    --------------------------
+    TicketID: 1
+    UserID: 2004
+    Ticket Description: computer issue
+    Ticket Severity: LOW
+    Enter ticket ID to process: 1
+    ------------------------------
+    1. Mark as CLOSED - RESOLVED
+    2. Mark as CLOSED - UNRESOLVED
+    3. Escalate to Level 2
+    Enter your choice: 1
+    ----------
+    MAIN MENU
+    ----------
+    1. View OPEN Tickets
+    2. View CLOSED Tickets
+    3. Return to Main Menu
+    Enter your choice: 2
+
+    -------------
+    CLOSED Tickets 
+    -------------
+
+    --------------------------
+    TicketID: 1
+    UserID: 2004
+    Ticket Description: computer issue
+    Ticket Severity: LOW
+    Ticket Status: CLOSE_RESOLVED
+    Enter ticket ID to process: 1
+    
+    --------------------------
+    TicketID: 1
+    UserID: 2004
+    Ticket Description: computer issue
+    Ticket Severity: LOW
+    Enter ticket ID to process: 1
+    ------------------------------
+    1. Mark as CLOSED - RESOLVED
+    2. Mark as CLOSED - UNRESOLVED
+    3. Escalate to Level 2
+    Enter your choice: 3
+    ----------
+    MAIN MENU
+    ----------
+    1. View OPEN Tickets
+    2. View CLOSED Tickets
+    3. Return to Main Menu
+    Enter your choice: 3
+    ----------------------
+    CINCO TICKETING SYSTEM
+    ----------------------
+    1. Staff Login
+    2. Technician Login
+    3. Forgot Password
+    4. Quit
+    Enter your choice: 2
+
+    -----------------
+    Technician Login 
+    -----------------
+
+    Enter email: louis.tomlinson@cinco.com
+    Enter password: louistomlinson2
+    Found user: 1003
+    Name: Louis Tomlinson
+    Phone: 61412345678
+    Email: louis.tomlinson@cinco.com
+    Level: 2
+    Tasks: 1
+    ----------
+    MAIN MENU
+    ----------
+    1. View OPEN Tickets
+    2. View CLOSED Tickets
+    3. Return to Main Menu
+    Enter your choice: 1
+
+    -------------
+    OPEN Tickets 
+    -------------
+
+    --------------------------
+    TicketID: 1
+    UserID: 2004
+    Ticket Description: computer issue
+    Ticket Severity: HIGH
+    Enter ticket ID to process: 1
+    ------------------------------
+    1. Mark as CLOSED - RESOLVED
+    2. Mark as CLOSED - UNRESOLVED
+    Enter your choice: 1
+    ```
+    
 ## Contributors
 1. Samuel Bradbury 
-    - Scrum leader initial stand up meeting/Created java project/Designed UML diagram for program planning/Contributed to the product backlog
+    - Assigment 2 Sprint 1 Scrum leader initial stand up meeting/Created java project/Designed UML diagram for program planning/Contributed to the product backlog
 2. Mohamed Ali
     - Contributed to the product backlog/Reviewed java program 
 3. Vignesh Menon
-    - Contributed to the ReadMe.txt/Reviewed java program 
+    - Assignmen 2 Sprint 2 Scrum leader/Contributed to the java project/Contributed to product backlog
 4. Idris Anwar
-    - Reviewed Java program
+    - Contributed to the product backlog/Reviewed Java program
 
 

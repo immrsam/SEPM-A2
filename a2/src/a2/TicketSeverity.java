@@ -1,5 +1,5 @@
 package a2;
 
 public enum TicketSeverity {
-	LOW, HIGH;
+	LOW, MEDIUM, HIGH;
 }
