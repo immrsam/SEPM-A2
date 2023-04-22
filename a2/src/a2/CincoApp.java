@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class CincoApp {
 	protected static HashMap<String, StaffMember> staff = new HashMap<String, StaffMember>();
 	protected static HashMap<String, Technician> tech = new HashMap<String, Technician>();
+	protected static HashMap<String, SystemOwner> systemOwners = new HashMap<String, SystemOwner>();
 	
 	protected static HashMap<Integer, Ticket> tickets = new HashMap<Integer, Ticket>();
 	protected static HashMap<Integer, Technician> ticketTracker = new HashMap<Integer, Technician>();
