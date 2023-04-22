@@ -19,6 +19,32 @@ public class LoginMenu extends CincoApp{
 			}
 			
 			switch(choice) {
+			case 0:
+				printSystemOwnerLoginHeader();
+				System.out.print("Enter email: ");
+				String soEmail = input.next();
+				SystemOwner soUser = systemOwners.get(soEmail);
+				if (soUser != null) {
+					System.out.print("Enter password: ");
+					String staffPassword = input.next();
+									
+					if(soUser.getPassword().equals(staffPassword)) {
+						System.out.println("Found user: " + soUser.getUserID());
+						System.out.println("Name: " + soUser.getfName() + " " + soUser.getlName());
+						System.out.println("Phone: " + soUser.getPhoneNumber());
+						System.out.println("Email: " + soUser.getEmail());
+						
+						// login successful - print main menu options
+						userID = soUser.getUserID();
+						return userID;					
+					} else {
+						System.out.println("Incorrect password");
+						continue;
+					}
+				} else {
+				    System.out.println("User not found, try again");
+				    continue;
+				}		
 			case 1:
 				printUserLoginHeader(); // user login option
 				System.out.print("Enter email: ");
@@ -109,13 +135,21 @@ public class LoginMenu extends CincoApp{
 		System.out.println("----------------------");
     	System.out.println("CINCO TICKETING SYSTEM");
     	System.out.println("----------------------");
+    	System.out.println("0. System Owner Login");
         System.out.println("1. Staff Login");
         System.out.println("2. Technician Login");
         System.out.println("3. Forgot Password");
         System.out.println("4. Quit");
         System.out.print("Enter your choice: ");
 	}
-	
+	// user login header
+	private static void printSystemOwnerLoginHeader() {
+		System.out.println();
+		System.out.println("------------");
+		System.out.println("System Login ");
+		System.out.println("------------");
+		System.out.println();
+	}
 	// user login header
 	private static void printUserLoginHeader() {
 		System.out.println();

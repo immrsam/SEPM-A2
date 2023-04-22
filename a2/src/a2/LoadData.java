@@ -35,5 +35,18 @@ public class LoadData extends CincoApp{
 			// put the technician data into HashMap
 			tech.put(tData[i][3], technician);
 		}
-	}	
+	}
+	
+	// Pre-load system owner
+	public static void LoadSystemOwners() {
+		String[][] soData = {{"9001", "System", "Owner", "system@cinco.com", "61440000000", "admin1", "3", "0"}};
+		for (int i = 0; i < soData.length; i++) {
+			int techID = Integer.parseInt(soData[i][0]);
+			int level = Integer.parseInt(soData[i][6]);
+			int numTasks = Integer.parseInt(soData[i][7]);
+			SystemOwner so = new SystemOwner(techID, soData[i][1], soData[i][2], soData[i][3], soData[i][4], soData[i][5], level, numTasks);
+			systemOwners.put(soData[i][3], so);
+		}
+	}
+	
 }

@@ -1,0 +1,46 @@
+package a2;
+
+import java.util.Scanner;
+
+public class SystemOwnerMenu{
+	public static void Processor(Scanner input, int userID) {
+		int choice = 0;
+		
+		do {
+			printSOMainMenuHeader();
+			
+			try {
+				choice = input.nextInt(); // get user choice
+            } catch (java.util.InputMismatchException e) {
+            	input.next(); // clear the invalid input from the scanner
+                System.out.println("Invalid input, please enter a number.");
+                continue;
+            }
+			
+            switch (choice) {
+            	case 1:
+            		System.out.println("	<-- Create reports entry point");
+            		continue;
+            	case 2:
+            		System.out.println("	<-- System admin entry point");
+            		continue;
+	            case 3:
+	            	break;
+	            default:
+	                System.out.println("Invalid choice, please try again");
+            }
+        } while (choice != 3);
+		
+	}
+
+	private static void printSOMainMenuHeader() {
+		// TODO Auto-generated method stub
+		System.out.println("----------");
+    	System.out.println("SYSTEM OWNER MENU");
+    	System.out.println("----------");
+        System.out.println("1. Create Reports");
+        System.out.println("2. System Admin");
+        System.out.println("3. Return to Main Menu");
+        System.out.print("Enter your choice: ");
+	}
+}

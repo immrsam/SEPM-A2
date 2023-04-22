@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class CincoApp {
 	protected static HashMap<String, StaffMember> staff = new HashMap<String, StaffMember>();
 	protected static HashMap<String, Technician> tech = new HashMap<String, Technician>();
+	protected static HashMap<String, SystemOwner> systemOwners = new HashMap<String, SystemOwner>();
 	
 	protected static HashMap<Integer, Ticket> tickets = new HashMap<Integer, Ticket>();
 	protected static HashMap<Integer, Technician> ticketTracker = new HashMap<Integer, Technician>();
@@ -23,10 +24,15 @@ public class CincoApp {
 		// Load data
 		LoadData.LoadStaff();
 		LoadData.LoadTechnicians();
+		LoadData.LoadSystemOwners();
 		
 		do {
 			userID = LoginMenu.Processor(input);
-			if (Integer.toString(userID).charAt(0) == '1') {
+			if(Integer.toString(userID).charAt(0) == '9') {
+				
+				SystemOwnerMenu.Processor(input, userID);
+			}
+			else if (Integer.toString(userID).charAt(0) == '1') {
 				// userID is for technician
 				TechMenu.Processor(input, userID);				
 			} else if (Integer.toString(userID).charAt(0) == '2') {
