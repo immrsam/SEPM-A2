@@ -10,19 +10,22 @@ This application aims to have the following features:
 3. Depending on the severity of the issue, the appropriate IT service desk is allocated to the issue (Level 1 gets allocated low/medium severity issues and Level 2 gets high severity issues)
 4. The system automatically assigns the IT technician with least amount of jobs with any new jobs
 5. Technicians can change the severity of the issue once they have reviewed it. Once they have completed the job they can also close the job/mark it as unresolved, etc. 
-6. Closed tickets are archived for upto 24hrs during which time the technician can view the ticket but cannot change the status of the ticket (i.e., from closed to open)
+6. Closed tickets are archived for after 24hrs during which time the technician can view the ticket but cannot change the status of the ticket (i.e., from closed to open)
+7. System owner can create reports for the past few days (e.g. 1 day or 7 days) and view all the tickets and their details
 
 ## Progress
 1. Login feature implemented - Staff login and Technician Login
 2. Data loaded directly from 2-D arrays rather than csv files
 3. Staff menu options allows users to submit IT issue tickets and View existing tickets
-4. Technician menu allows technician to view open ticket (if they exist) and closed ticket ONLY after a open ticket has been closed (exception handling on this is will be completed on next iteration)
+4. Technician menu allows technician to view open ticket (if they exist) and closed ticket ONLY after a open ticket has been closed 
 5. Technicians can escalate tasks from LOW or MEDIUM to HIGH (i.e., level 1 technicians can moved the task to level 2)
-6. Tehcnicians can close the task and mark then as resolved or unresolved
+6. Technicians can close the task and mark then as resolved or unresolved
 7. Technicians can view closed tasks (re-opening tasks and storing tasks for only 24 hrs will be implemented in next iteration)
 8. Forgot password feature completed
-9. Classes created - LoadData, Menu, StaffMember, Technician, Ticket, TicketSeverity, TicketStatus, User and CincoApp, StaffMenu, TechMenu
-10. Creating user login will be implemented in next iteration along with exception handling for all possible error cases.
+9. Classes created - LoadData, Menu, StaffMember, Technician, Ticket, TicketSeverity, TicketStatus, User and CincoApp, StaffMenu, TechMenu, SystemOwner, SystemOwnerMenu
+10. Create new staff account feature added
+11. System own can create reports for the past few days (e.g. 1 day or 7 days) and view all the tickets and their details
+12. System now archives closed (resolved/unresolved) tickets after 24hrs
 
 ## Installation/Usage
 
@@ -127,7 +130,6 @@ Download the Eclipse 2022-09 (version 4.25) from the following link: https://www
     VIEW MY EXISTING OPEN I.T. ISSUE(S)
     ----------------------------------------------------
 
-    --------------------------
     TicketID: 1
     Ticket Description: For Demo Only
     Ticket Severity: LOW
