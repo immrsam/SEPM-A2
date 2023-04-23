@@ -14,8 +14,8 @@ public class LoginMenu extends CincoApp{
 				choice = input.nextInt(); // get user choice
 			} catch (java.util.InputMismatchException e) {
 				input.next(); // clear the invalid input from the scanner
-	            System.out.println("Invalid input, please enter a number.");
-	            continue;
+	         System.out.println("Invalid input, please enter a number.");
+	         continue;
 			}
 			
 			switch(choice) {
@@ -69,8 +69,9 @@ public class LoginMenu extends CincoApp{
 						continue;
 					}
 				} else {
-				    System.out.println("User not found, try again");
-				    continue;
+					System.out.println("User not found, create new account");
+					createAccountOptions(input);
+					continue;
 				}		
 			case 2:
 				printTechLoginHeader(); // technician login option
@@ -142,6 +143,7 @@ public class LoginMenu extends CincoApp{
         System.out.println("4. Quit");
         System.out.print("Enter your choice: ");
 	}
+	
 	// user login header
 	private static void printSystemOwnerLoginHeader() {
 		System.out.println();
@@ -150,6 +152,7 @@ public class LoginMenu extends CincoApp{
 		System.out.println("------------");
 		System.out.println();
 	}
+	
 	// user login header
 	private static void printUserLoginHeader() {
 		System.out.println();
@@ -175,5 +178,53 @@ public class LoginMenu extends CincoApp{
 		System.out.println("------------------------");
 	}
 	
-	
+	private static void createAccountOptions(Scanner input) {
+		int choice = 0;
+		do {
+			printCreateAccountHeader();
+			try {
+				choice = input.nextInt(); // get user choice
+			} catch (java.util.InputMismatchException e) {
+				input.next(); // clear the invalid input from the scanner
+	         System.out.println("Invalid input, please enter a number.");
+	         continue;
+			}
+			
+			switch(choice) {
+				case 1:
+					int staffID = staff.size() + 1;
+					System.out.print("Enter First Name: ");
+					String fname = input.next();
+
+					System.out.print("Enter Last Name: ");
+					String lname = input.next();
+					
+					System.out.print("Enter Email (eg. bill.smith@cinco.com): ");
+					String email = input.next();
+
+					System.out.print("Enter phone number (eg. 61412345678): ");
+					String phone = input.next();
+
+					System.out.print("Enter password: ");
+					String password = input.next();
+
+					StaffMember staffMember = new StaffMember(staffID, fname, lname, email, phone, password);
+
+					staff.put(email, staffMember);
+				case 2:
+					// return to main menu
+					break;
+
+			}
+		} while (choice != 2);
+	}
+
+	private static void printCreateAccountHeader() {
+		System.out.println();
+		System.out.println("------------------------");
+		System.out.println("Create New Staff Account");
+		System.out.println("------------------------");
+		System.out.println("1. Create Account");
+		System.out.println("2. Return to main menu");
+	}
 }

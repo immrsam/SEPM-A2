@@ -80,7 +80,7 @@ public class TechMenu extends LoginMenu {
 		int count = 0;
 		for(int t = 1; t <= tickets.size(); t++) {
 			if (ticketTracker.get(t).getUserID() == userID) {
-				if(tickets.get(t).getStatus() == TicketStatus.CLOSE_RESOLVED || tickets.get(t).getStatus() == TicketStatus.CLOSE_UNRESOLVED || tickets.get(t).getStatus() == TicketStatus.ARCHIVE) {
+				if(tickets.get(t).getStatus() == TicketStatus.CLOSE_RESOLVED || tickets.get(t).getStatus() == TicketStatus.CLOSE_UNRESOLVED) {
 					count++;
 					System.out.println("--------------------------");
 					System.out.println("TicketID: " + tickets.get(t).getTicketId() + "\nUserID: " + tickets.get(t).getUserID() + "\nTicket Description: "
