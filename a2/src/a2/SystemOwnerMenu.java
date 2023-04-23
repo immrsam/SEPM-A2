@@ -106,9 +106,9 @@ public class SystemOwnerMenu extends CincoApp {
 		System.out.println("OPEN TICKETS REPORT FOR " + days + " DAYS");
 		System.out.println("----------------------------------------------------");
 		for(int o = 0; o < openTickets.size(); o++) {
-			System.out.println("----------------------------");
 			System.out.println("Created Time: " + openTickets.get(o).getCreatedTime() + "\nStaffID: " + openTickets.get(o).getUserID() 
-						+ "\nTicket Severity: " + openTickets.get(o).getSeverity()); 
+						+ "\nTicket Severity: " + openTickets.get(o).getSeverity());
+			System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++"); 
 		}
 		System.out.println("----------------------------------------------------");
 		System.out.println("CLOSED RESOLVED TICKETS REPORT FOR " + days + " DAYS");
@@ -118,7 +118,7 @@ public class SystemOwnerMenu extends CincoApp {
 			System.out.println("Created Time: " + closedResolvedTickets.get(r).getCreatedTime() + "\nStaffID: " + closedResolvedTickets.get(r).getUserID() 
 						+ "\nTicket Severity: " + closedResolvedTickets.get(r).getSeverity() + "\nProcessed by: " + closedResolvedTickets.get(r).getTechID() 
 						+ "\nAttended to within: " + timeElapsed + " hrs");
-			System.out.println(".................................................");
+			System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++");
 		}
 		System.out.println("----------------------------------------------------");
 		System.out.println("CLOSED UNRESOLVED TICKETS REPORT FOR " + days + " DAYS");
@@ -128,7 +128,7 @@ public class SystemOwnerMenu extends CincoApp {
 			System.out.println("Created Time: " + closedUnresolvedTickets.get(u).getCreatedTime() + "\nStaffID: " + closedUnresolvedTickets.get(u).getUserID() 
 						+ "\nTicket Severity: " + closedUnresolvedTickets.get(u).getSeverity() + "\nProcessed by: " + closedUnresolvedTickets.get(u).getTechID() 
 						+ "\nAttended to within: " + timeElapsed + " hrs");
-			System.out.println(".................................................");
+			System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++");
 		}
 		System.out.println("----------------------------------------------------");
 		System.out.println("ARCHIVED TICKETS REPORT FOR " + days + " DAYS");
@@ -138,7 +138,7 @@ public class SystemOwnerMenu extends CincoApp {
 			System.out.println("Created Time: " + archivedTickets.get(a).getCreatedTime() + "\nStaffID: " + archivedTickets.get(a).getUserID() 
 						+ "\nTicket Severity: " + archivedTickets.get(a).getSeverity() + "\nProcessed by: " + archivedTickets.get(a).getTechID() 
 						+ "\nAttended to within: " + timeElapsed + " hrs");
-			System.out.println(".................................................");
+			System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++");
 		}
 
 	}
