@@ -1,8 +1,15 @@
 package a2;
 
 public class LoadData extends CincoApp{
-	//Pre-loaded Technician Data
-	public static void LoadStaff() {
+	// load all data into hashmaps
+	public static void loadAllData(){
+		LoadStaff();
+		LoadTechnicians();
+		LoadSystemOwners();
+	}
+
+	//Pre-loaded Staff Data
+	private static void LoadStaff() {
 		String[][] sData = {{"2001", "Sam", "Bradbury", "sam.bradbury@cinco.com", "61412345678", "sambradbury1"},
 				{"2002", "Idris", "Anwar", "idris.anward@cinco.com", "61412345678", "idrisanwar1"}, 
 				{"2003", "Mohamed", "Ali", "mohammed.ali@cinco.com", "61412345678", "mohamedali1"}, 
@@ -13,13 +20,13 @@ public class LoadData extends CincoApp{
 			int staffID = Integer.parseInt(sData[i][0]);
 			StaffMember staffMember = new StaffMember(staffID, sData[i][1], sData[i][2], sData[i][3], sData[i][4], sData[i][5]);
 			
-			// put the technician data into HashMap
+			// put the staff data into HashMap
 			staff.put(sData[i][3], staffMember);
 		}
 	}
 	
 	//Pre-loaded Technician Data
-	public static void LoadTechnicians() {
+	private static void LoadTechnicians() {
 		String[][] tData = {{"1000", "Harry", "Styles", "harry.styles@cinco.com", "61412345678", "harrystyles1", "1", "0"},
 				{"1001", "Naill", "Horan", "naill.horan@cinco.com", "61412345678", "naillhoran1", "1", "0"}, 
 				{"1002", "Liam", "Payne", "liam.payne@cinco.com", "61412345678", "liampayne1", "1", "0"}, 
@@ -38,13 +45,15 @@ public class LoadData extends CincoApp{
 	}
 	
 	// Pre-load system owner
-	public static void LoadSystemOwners() {
+	private static void LoadSystemOwners() {
 		String[][] soData = {{"9001", "System", "Owner", "system@cinco.com", "61440000000", "admin1", "3", "0"}};
 		for (int i = 0; i < soData.length; i++) {
 			int techID = Integer.parseInt(soData[i][0]);
 			int level = Integer.parseInt(soData[i][6]);
 			int numTasks = Integer.parseInt(soData[i][7]);
 			SystemOwner so = new SystemOwner(techID, soData[i][1], soData[i][2], soData[i][3], soData[i][4], soData[i][5], level, numTasks);
+
+			// put the system owner data into HashMap
 			systemOwners.put(soData[i][3], so);
 		}
 	}

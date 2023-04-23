@@ -19,24 +19,21 @@ public class CincoApp {
 		
 		// variables
 		int userID = 0;
-		
-		
+				
 		// Load data
-		LoadData.LoadStaff();
-		LoadData.LoadTechnicians();
-		LoadData.LoadSystemOwners();
+		LoadData.loadAllData();
 		
 		do {
 			userID = LoginMenu.Processor(input);
 			if(Integer.toString(userID).charAt(0) == '9') {
-				
+				// userId for system owner starts with 9xxx
 				SystemOwnerMenu.Processor(input, userID);
 			}
 			else if (Integer.toString(userID).charAt(0) == '1') {
-				// userID is for technician
+				// userID for technician starts with 1xxx
 				TechMenu.Processor(input, userID);				
 			} else if (Integer.toString(userID).charAt(0) == '2') {
-				// userID is for staff
+				// userID for staff starts with 2xxx
 				StaffMenu.Processor(input, userID);
 			}
 		} while (appRunning);

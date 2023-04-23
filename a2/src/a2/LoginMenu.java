@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class LoginMenu extends CincoApp{
 
+	// login menu processor
 	public static int Processor(Scanner input) {
 		int userID = 0;
 		int choice = 0;
@@ -131,53 +132,7 @@ public class LoginMenu extends CincoApp{
 		return 0;
 	}
 	
-	// login menu header options
-	public static void printLoginMenu() {
-		System.out.println("----------------------");
-    	System.out.println("CINCO TICKETING SYSTEM");
-    	System.out.println("----------------------");
-    	System.out.println("0. System Owner Login");
-        System.out.println("1. Staff Login");
-        System.out.println("2. Technician Login");
-        System.out.println("3. Forgot Password");
-        System.out.println("4. Quit");
-        System.out.print("Enter your choice: ");
-	}
-	
-	// user login header
-	private static void printSystemOwnerLoginHeader() {
-		System.out.println();
-		System.out.println("------------");
-		System.out.println("System Login ");
-		System.out.println("------------");
-		System.out.println();
-	}
-	
-	// user login header
-	private static void printUserLoginHeader() {
-		System.out.println();
-		System.out.println("-----------");
-		System.out.println("Staff Login ");
-		System.out.println("-----------");
-		System.out.println();
-	}
-	
-	// technician login header
-	private static void printTechLoginHeader() {
-		System.out.println();
-		System.out.println("-----------------");
-		System.out.println("Technician Login ");
-		System.out.println("-----------------");
-		System.out.println();
-	}
-	
-	// forgot password header
-	private static void printForgotPasswordHeader() {
-		System.out.println("------------------------");
-		System.out.println("Forgot Password selected");
-		System.out.println("------------------------");
-	}
-	
+	// process for create new account for staff
 	private static void createAccountOptions(Scanner input) {
 		int choice = 0;
 		do {
@@ -225,6 +180,55 @@ public class LoginMenu extends CincoApp{
 		} while (choice != 2);
 	}
 
+	// Menu headers / options ---------------------------------------------------------------
+	// login menu header options
+	public static void printLoginMenu() {
+		System.out.println("----------------------");
+    	System.out.println("CINCO TICKETING SYSTEM");
+    	System.out.println("----------------------");
+    	System.out.println("0. System Owner Login");
+        System.out.println("1. Staff Login");
+        System.out.println("2. Technician Login");
+        System.out.println("3. Forgot Password");
+        System.out.println("4. Quit");
+        System.out.print("Enter your choice: ");
+	}
+	
+	// user login header
+	private static void printSystemOwnerLoginHeader() {
+		System.out.println();
+		System.out.println("------------");
+		System.out.println("System Login ");
+		System.out.println("------------");
+		System.out.println();
+	}
+	
+	// user login header
+	private static void printUserLoginHeader() {
+		System.out.println();
+		System.out.println("-----------");
+		System.out.println("Staff Login ");
+		System.out.println("-----------");
+		System.out.println();
+	}
+	
+	// technician login header
+	private static void printTechLoginHeader() {
+		System.out.println();
+		System.out.println("-----------------");
+		System.out.println("Technician Login ");
+		System.out.println("-----------------");
+		System.out.println();
+	}
+	
+	// forgot password header
+	private static void printForgotPasswordHeader() {
+		System.out.println("------------------------");
+		System.out.println("Forgot Password selected");
+		System.out.println("------------------------");
+	}
+	
+	// create account header
 	private static void printCreateAccountHeader() {
 		System.out.println();
 		System.out.println("------------------------");

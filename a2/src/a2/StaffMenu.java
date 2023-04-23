@@ -1,9 +1,11 @@
 package a2;
 
+import java.util.Date;
 import java.util.Scanner;
 
 public class StaffMenu extends LoginMenu {
 
+	// staff main menu processor
 	public static void Processor(Scanner input, int userID) {
 		int choice = 0;
 
@@ -35,6 +37,7 @@ public class StaffMenu extends LoginMenu {
 		} while (choice != 3);
 	}
 
+	// process submit new ticket
 	private static void submitTicketProcessor(Scanner input, int userID) {
 		int ticketID = tickets.size() + 1; // size of ticket HashMap + 1
 
@@ -47,23 +50,26 @@ public class StaffMenu extends LoginMenu {
 		printSeverityHeader();
 		int tktSeverityInt = input.nextInt();
 
+		Date date = new Date();
+
 		// using the severity/description/ticketID create new ticket, then put into
 		// tickets HashMap
 		if (tktSeverityInt == 1) {
-			Ticket newTicket = new Ticket(userID, ticketID, tktDesc, TicketStatus.OPEN, TicketSeverity.LOW);
+			Ticket newTicket = new Ticket(userID, ticketID, tktDesc, TicketStatus.OPEN, TicketSeverity.LOW, date);
 			tickets.put(ticketID, newTicket); // store ticket in tickets HashMap
 			ticketTaskerProcess(ticketID); // assign the ticket to a technician
 		} else if (tktSeverityInt == 2) {
-			Ticket newTicket = new Ticket(userID, ticketID, tktDesc, TicketStatus.OPEN, TicketSeverity.MEDIUM);
+			Ticket newTicket = new Ticket(userID, ticketID, tktDesc, TicketStatus.OPEN, TicketSeverity.MEDIUM, date);
 			tickets.put(ticketID, newTicket); // store ticket in tickets HashMap
 			ticketTaskerProcess(ticketID); // assign the ticket to a technician
 		} else if (tktSeverityInt == 3) {
-			Ticket newTicket = new Ticket(userID, ticketID, tktDesc, TicketStatus.OPEN, TicketSeverity.HIGH);
+			Ticket newTicket = new Ticket(userID, ticketID, tktDesc, TicketStatus.OPEN, TicketSeverity.HIGH, date);
 			tickets.put(ticketID, newTicket); // store ticket in tickets HashMap
 			ticketTaskerProcess(ticketID); // assign the ticket to a technician
 		}
 	}
 
+	// process view tickets from staff currently logged in
 	private static void viewTicketProcessor(int userID) {
 		// loop through all the tickets and get the tickets for current staff (using
 		// user ID)
@@ -77,10 +83,14 @@ public class StaffMenu extends LoginMenu {
 			}
 		}
 	}
+
+	// ticket tasker assigns new tickets to technicians with least tickets
 	public static void ticketTaskerProcess(int tktID) { 
 		// Hard coded Tech Emails 
 		String[] techID1 = {"harry.styles@cinco.com", "naill.horan@cinco.com", "liam.payne@cinco.com"}; // level 1 techs
 		String[] techID2 = {"louis.tomlinson@cinco.com", "zayn.malik@cinco.com"}; // level 2 techs
+
+		// level 2 techs
 		if(tickets.get(tktID).getSeverity() == TicketSeverity.HIGH) {
 			if(tech.get(techID2[0]).getNumTasks() <= tech.get(techID2[1]).getNumTasks()) {
 				// louis has same number of tasks or less, assign task to louis
@@ -91,7 +101,7 @@ public class StaffMenu extends LoginMenu {
 				ticketTracker.put(tktID, tech.get(techID2[1]));
 				tech.get(techID2[1]).setNumTasks(tech.get(techID2[1]).getNumTasks() + 1); // increase task + 1
 			}
-		} else {
+		} else { // level 1 techs
 			if((tech.get(techID1[0]).getNumTasks() <= tech.get(techID1[1]).getNumTasks()) && (tech.get(techID1[0]).getNumTasks() <= tech.get(techID1[2]).getNumTasks())) {
 				// harry has same number of tasks or less, assign task to harry
 				ticketTracker.put(tktID, tech.get(techID1[0]));
@@ -108,6 +118,7 @@ public class StaffMenu extends LoginMenu {
 		}
 	}
 	
+	// Menu headers / options ---------------------------------------------------------------
 	private static void printStaffMainMenuHeader() {
 		System.out.println("----------");
 		System.out.println("MAIN MENU");
