@@ -9,6 +9,8 @@ public class Ticket {
 	private TicketStatus status;
 	private TicketSeverity severity;
 	private Date createdTime;
+	private int techID;
+	private Date closedTime;
 	public Ticket(int userID, int ticketId, String description, TicketStatus status, TicketSeverity severity, Date createdTime) {
 		super();
 		this.userID = userID;
@@ -56,6 +58,22 @@ public class Ticket {
 
 	public void setCreatedTime(Date createdTime) {
 		this.createdTime = createdTime;
+	}
+
+	public void setTechID(int techID) {
+		this.techID = techID;
+	}
+
+	public int getTechID() {
+		return techID;
+	}
+
+	public void setCloseTime(Date closedTime) {
+		this.closedTime =  closedTime;
+	}
+
+	public Date getClosedTime() {
+		return closedTime;
 	}
 
 	@Override

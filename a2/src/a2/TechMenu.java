@@ -52,7 +52,7 @@ public class TechMenu extends LoginMenu {
 	            default:
 	                System.out.println("Invalid choice, please try again");
             }
-        } while (choice != 3);
+        } while (choice != 4);
 		
 	}
 	
@@ -68,7 +68,7 @@ public class TechMenu extends LoginMenu {
 						+ tickets.get(t).getDescription() + "\nTicket Severity: " + tickets.get(t).getSeverity());
 			}
 		}
-		
+
 		printProcessTicketHeader();
 		int choice = input.nextInt();
 		if(choice == 1) {
@@ -78,7 +78,7 @@ public class TechMenu extends LoginMenu {
 				tickets.get(tktID).toString(); // get ticket details
 				printTicketProcessOptions(tickets.get(tktID).getSeverity()); // print open ticket options
 				int techInput = input.nextInt(); // get the tech's choice of process
-				openTicketProcessor(tickets.get(tktID).getTicketId(), techInput); // process open ticket
+				openTicketProcessor(tickets.get(tktID).getTicketId(), techInput, userID); // process open ticket
 			} else {
 				System.out.println("Invalid choice, please try again");
 			}
@@ -122,14 +122,19 @@ public class TechMenu extends LoginMenu {
 	}
 	
 	// based on tech user input process open tickets
-	private static void openTicketProcessor(int ticketID, int choice) {
+	private static void openTicketProcessor(int ticketID, int choice, int userID) {
+		Date closeTime = new Date();
 		if(choice == 1) {
 			tickets.get(ticketID).setStatus(TicketStatus.CLOSE_RESOLVED);
+			tickets.get(ticketID).setTechID(userID); // set tech user ID to indicate they attended to it
+			tickets.get(ticketID).setCloseTime(closeTime);
 		} else if (choice == 2) {
 			tickets.get(ticketID).setStatus(TicketStatus.CLOSE_UNRESOLVED);
+			tickets.get(ticketID).setTechID(userID); // set tech user ID to indicate they attended to it
+			tickets.get(ticketID).setCloseTime(closeTime);
 		} else if (choice == 3) {
 			tickets.get(ticketID).setSeverity(TicketSeverity.HIGH);
-			StaffMenu.ticketTaskerProcess(ticketID);
+			StaffMenu.ticketTaskerProcess(ticketID); // set tech user ID to indicate they attended to it
 		}
 	}
 	
