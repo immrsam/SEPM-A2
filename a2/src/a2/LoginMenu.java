@@ -192,7 +192,7 @@ public class LoginMenu extends CincoApp{
 			
 			switch(choice) {
 				case 1:
-					int staffID = staff.size() + 1;
+					int staffID = staff.size() + 2001;
 					System.out.print("Enter First Name: ");
 					String fname = input.next();
 
@@ -201,6 +201,11 @@ public class LoginMenu extends CincoApp{
 					
 					System.out.print("Enter Email (eg. bill.smith@cinco.com): ");
 					String email = input.next();
+					// if email is not unique - prompt user to try again
+					if (staff.containsKey(email)) {
+						System.out.println("Email is not unique, user exists in database, try again");
+						continue;
+					}
 
 					System.out.print("Enter phone number (eg. 61412345678): ");
 					String phone = input.next();
@@ -211,6 +216,7 @@ public class LoginMenu extends CincoApp{
 					StaffMember staffMember = new StaffMember(staffID, fname, lname, email, phone, password);
 
 					staff.put(email, staffMember);
+					break;
 				case 2:
 					// return to main menu
 					break;
