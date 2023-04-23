@@ -33,19 +33,22 @@ public class SystemOwnerMenu extends CincoApp {
 	}
 
 	private static void printSOMainMenuHeader() {
-		System.out.println("-----------------");
-    	System.out.println("SYSTEM OWNER MENU");
-    	System.out.println("-----------------");
+		System.out.println();
+		System.out.println("----------------------------------------------------");
+		System.out.println("SYSTEM OWNER MAIN MENU");
+		System.out.println("----------------------------------------------------");
+		System.out.println();
 		System.out.println("1. Create Reports");
-		System.out.println("2. System Admin");
-		System.out.println("3. Return to Main Menu");
+		System.out.println("2. Return to Main Menu");
 		System.out.print("Enter your choice: ");
 	}
 
 	private static void createReportsHeader() {
-		System.out.println("------------------------------------------------------------------");
-    	System.out.println("CREATE REPORTS MENU");
-    	System.out.println("------------------------------------------------------------------");
+		System.out.println();
+		System.out.println("----------------------------------------------------");
+		System.out.println("CREATE REPORTS MENU");
+		System.out.println("----------------------------------------------------");
+		System.out.println();
 		System.out.println("View reports for the last x numbers of days (e.g. 1 day or 7 days)");
 		System.out.print("Enter numbers of days: ");
 	}

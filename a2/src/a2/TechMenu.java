@@ -63,9 +63,11 @@ public class TechMenu extends LoginMenu {
 		for(int t = 1; t <= tickets.size(); t++) {
 			if(tickets.get(t).getStatus() == TicketStatus.OPEN && ticketTracker.get(t).getUserID() == userID) {
 				count++;
-				System.out.println("--------------------------");
+				
 				System.out.println("TicketID: " + tickets.get(t).getTicketId() + "\nUserID: " + tickets.get(t).getUserID() + "\nTicket Description: "
 						+ tickets.get(t).getDescription() + "\nTicket Severity: " + tickets.get(t).getSeverity());
+				System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++");
+				
 			}
 		}
 
@@ -95,9 +97,10 @@ public class TechMenu extends LoginMenu {
 			if (ticketTracker.get(t).getUserID() == userID) {
 				if((tickets.get(t).getStatus() == TicketStatus.CLOSE_RESOLVED) || (tickets.get(t).getStatus() == TicketStatus.CLOSE_UNRESOLVED)) {
 					count++;
-					System.out.println("--------------------------");
+					
 					System.out.println("TicketID: " + tickets.get(t).getTicketId() + "\nUserID: " + tickets.get(t).getUserID() + "\nTicket Description: "
 							+ tickets.get(t).getDescription() + "\nTicket Severity: " + tickets.get(t).getSeverity() + "\nTicket Status: " + tickets.get(t).getStatus());
+					System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++");
 				}
 			}
 		}
@@ -141,7 +144,11 @@ public class TechMenu extends LoginMenu {
 	// based on tech user input process closed tickets
 	private static void printClosedTicketProcessOptions(TicketStatus ticketStatus) {
 		if (ticketStatus != TicketStatus.OPEN) {
-			System.out.println("------------------------------");
+			System.out.println();
+			System.out.println("----------------------------------------------------");
+			System.out.println("PROCESS THIS CLOSED TICKET");
+			System.out.println("----------------------------------------------------");
+			System.out.println();
 			System.out.println("1. Mark as OPEN");
 	        System.out.print("Enter your choice: ");
 		}
@@ -149,10 +156,16 @@ public class TechMenu extends LoginMenu {
 	
 	// find all archived tickets and print them
 	private static void printArchivedTickets() {
+		System.out.println();
+		System.out.println("----------------------------------------------------");
+		System.out.println("ALL ARCHIVED TICKET(S)");
+		System.out.println("----------------------------------------------------");
+		System.out.println();
 		for(int t = 1; t <= tickets.size(); t++) {
 			if(tickets.get(t).getStatus() == TicketStatus.ARCHIVED) {
 				System.out.println("TicketID: " + tickets.get(t).getTicketId() + "\nUserID: " + tickets.get(t).getUserID() + "\nTicket Description: "
 								+ tickets.get(t).getDescription() + "\nTicket Severity: " + tickets.get(t).getSeverity() + "\nTicket Status: " + tickets.get(t).getStatus());
+				System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++");			
 			}
 		}
 	}
@@ -176,30 +189,44 @@ public class TechMenu extends LoginMenu {
 	// Menu headers / options ---------------------------------------------------------------
 	private static void printTicketProcessOptions(TicketSeverity tktSeverity) {
 		if (tktSeverity == TicketSeverity.LOW || tktSeverity == TicketSeverity.MEDIUM) {
-			System.out.println("------------------------------");
+			System.out.println();
+			System.out.println("----------------------------------------------------");
+			System.out.println("PROCESS THIS TICKET");
+			System.out.println("----------------------------------------------------");
+			System.out.println();
 			System.out.println("1. Mark as CLOSED - RESOLVED");
-	        System.out.println("2. Mark as CLOSED - UNRESOLVED");
-	        System.out.println("3. Escalate to Level 2");
-	        System.out.print("Enter your choice: ");
+			System.out.println("2. Mark as CLOSED - UNRESOLVED");
+			System.out.println("3. Escalate to Level 2");
+			System.out.print("Enter your choice: ");
 		} else if (tktSeverity == TicketSeverity.HIGH) {
-			System.out.println("------------------------------");
-	        System.out.println("1. Mark as CLOSED - RESOLVED");
-	        System.out.println("2. Mark as CLOSED - UNRESOLVED");
-	        System.out.print("Enter your choice: ");
+			System.out.println();
+			System.out.println("----------------------------------------------------");
+			System.out.println("PROCESS THIS TICKET");
+			System.out.println("----------------------------------------------------");
+			System.out.println();
+			System.out.println("1. Mark as CLOSED - RESOLVED");
+			System.out.println("2. Mark as CLOSED - UNRESOLVED");
+			System.out.print("Enter your choice: ");
 		}	
 	}
 	
 	private static void printProcessTicketHeader() {
-		System.out.println("Process or return to main menu: ");
+		System.out.println();
+		System.out.println("----------------------------------------------------");
+		System.out.println("PROCESS A TICKET OR RETURN TO PREVIOUS MENU");
+		System.out.println("----------------------------------------------------");
+		System.out.println();
 		System.out.println("1. Process a ticket");
 		System.out.println("2. Return to previous menu");
 		System.out.print("Enter a choice: ");
 	}
 	
 	private static void printTechMainMenuHeader( ) {
-		System.out.println("----------");
-    	System.out.println("MAIN MENU");
-    	System.out.println("----------");
+		System.out.println();
+		System.out.println("----------------------------------------------------");
+		System.out.println("TECHNICIAN MAIN MENU");
+		System.out.println("----------------------------------------------------");
+		System.out.println();
     	System.out.println("1. View OPEN Tickets");
 		System.out.println("2. View CLOSED Tickets");
 		System.out.println("3. View ARCHIVED Tickets");
@@ -209,17 +236,17 @@ public class TechMenu extends LoginMenu {
 	
 	private static void printOpenTicketHeader() {
 		System.out.println();
-		System.out.println("-------------");
-		System.out.println("OPEN Tickets ");
-		System.out.println("-------------");
+		System.out.println("----------------------------------------------------");
+		System.out.println("OPEN TICKET(S) ASSIGNED TO YOU");
+		System.out.println("----------------------------------------------------");
 		System.out.println();
 	}
 	
 	private static void printClosedTicketHeader() {
 		System.out.println();
-		System.out.println("-------------");
-		System.out.println("CLOSED Tickets ");
-		System.out.println("-------------");
+		System.out.println("----------------------------------------------------");
+		System.out.println("CLOSED TICKET(S) THAT WERE ASSIGNED TO YOU");
+		System.out.println("----------------------------------------------------");
 		System.out.println();
 	}
 }

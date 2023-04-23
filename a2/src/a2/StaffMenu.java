@@ -120,37 +120,41 @@ public class StaffMenu extends LoginMenu {
 	
 	// Menu headers / options ---------------------------------------------------------------
 	private static void printStaffMainMenuHeader() {
-		System.out.println("----------");
-		System.out.println("MAIN MENU");
-		System.out.println("----------");
-		System.out.println("1. Submit new IT issue");
-		System.out.println("2. View existing IT issue(s)");
-		System.out.println("3. Return to Main Menu");
+		System.out.println();
+		System.out.println("----------------------------------------------------");
+		System.out.println("STAFF MAIN MENU");
+		System.out.println("----------------------------------------------------");
+		System.out.println();
+		System.out.println("[1] Submit new IT issue");
+		System.out.println("[2] View my existing open IT issue(s)");
+		System.out.println("[3] Return to Main Menu");
 		System.out.print("Enter your choice: ");
 
 	}
 
 	private static void printSubmitTicketHeader() {
 		System.out.println();
-		System.out.println("--------------------");
-		System.out.println("Submit new IT issue ");
-		System.out.println("--------------------");
+		System.out.println("----------------------------------------------------");
+		System.out.println("SUBMIT NEW I.T. ISSUE");
+		System.out.println("----------------------------------------------------");
 		System.out.println();
 	}
 
 	private static void printViewTicketHeader() {
 		System.out.println();
-		System.out.println("--------------------------");
-		System.out.println("View existing IT issue(s) ");
-		System.out.println("--------------------------");
+		System.out.println("----------------------------------------------------");
+		System.out.println("VIEW MY EXISTING OPEN I.T. ISSUE(S)");
+		System.out.println("----------------------------------------------------");
 		System.out.println();
 	}
 
 	private static void printSeverityHeader() {
-		System.out.println("Select Severity:");
-		System.out.println("1. Low");
-		System.out.println("2. Medium");
-		System.out.println("3. High");
+		System.out.println("----------------------------------------------------");
+		System.out.println("SELECT I.T. ISSUE SEVERITY");
+		System.out.println("----------------------------------------------------");
+		System.out.println("[1] Low");
+		System.out.println("[2] Medium");
+		System.out.println("[3] High");
 		System.out.print("Enter your choice: ");
 	}
 }
