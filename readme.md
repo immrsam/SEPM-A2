@@ -24,7 +24,7 @@ This application aims to have the following features:
 8. Forgot password feature completed
 9. Classes created - LoadData, Menu, StaffMember, Technician, Ticket, TicketSeverity, TicketStatus, User and CincoApp, StaffMenu, TechMenu, SystemOwner, SystemOwnerMenu
 10. Create new staff account feature added
-11. System own can create reports for the past few days (e.g. 1 day or 7 days) and view all the tickets and their details
+11. System own can create reports for the past few days (e.g. 1 day or 7 days) and view all the tickets and their details (who submitted it, when it was submitted, if closed who attended to it (technician ID) and how long it took to attend to it (in hours))
 12. System now archives closed (resolved/unresolved) tickets after 24hrs
 
 ## Installation/Usage
@@ -440,6 +440,20 @@ Download the Eclipse 2022-09 (version 4.25) from the following link: https://www
 
     ----------------------------------------------------
     ```
+7. Finally, quit the program using `[4] Quit`:
+    ```
+    ----------------------------------------------------
+    CINCO TICKETING SYSTEM
+    ----------------------------------------------------
+    [0] System Owner Login
+    [1] Staff Login
+    [2] Technician Login
+    [3] Forgot Password
+    [4] Quit
+    Enter your choice: 4
+    Quitting...
+    ```
+
 ## Contributors
 1. Samuel Bradbury 
     - Assigment 2 Sprint 1 Scrum leader initial stand up meeting
